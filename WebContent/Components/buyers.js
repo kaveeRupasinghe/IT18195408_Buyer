@@ -67,7 +67,7 @@ if (status == "success")
  $("#formBuyer")[0].reset();
 }
 
-// UPDATE=====================================
+// UPDATE=================================
 $(document).on("click", ".btnUpdate", function(event)
 {
  
