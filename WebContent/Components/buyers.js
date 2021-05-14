@@ -70,7 +70,9 @@ if (status == "success")
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event)
 {
-$("#hidBnoSave").val($(this).data("bno")); 
+ 
+ //$("#hidBnoSave").val($(this).data("bno")); 
+ $("#hidBnoSave").val($(this).closest("tr").find('#hidBnoUpdate').val()); 
  $("#buyerID").val($(this).closest("tr").find('td:eq(0)').text());
  $("#name").val($(this).closest("tr").find('td:eq(1)').text());
  $("#address").val($(this).closest("tr").find('td:eq(2)').text());
