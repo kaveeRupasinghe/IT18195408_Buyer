@@ -14,6 +14,7 @@ $(document).on("click", "#btnSave", function(event)
  $("#alertSuccess").hide();
  $("#alertError").text("");
  $("#alertError").hide();
+
 // Form validation-------------------
 var status = validateBuyerForm();
 if (status != true)
@@ -23,12 +24,12 @@ if (status != true)
  return;
  }
 // If valid------------------------
-var type = ($("#hidItemIDSave").val() == "") ? "POST" : "PUT";
+var type = ($("#hidBnoSave").val() == "") ? "POST" : "PUT";
  $.ajax(
  {
  url : "BuyersAPI",
  type : type,
- data : $("#formbUYER").serialize(),
+ data : $("#formBuyer").serialize(),
  dataType : "text",
  complete : function(response, status)
  {
@@ -62,20 +63,20 @@ if (status == "success")
  $("#alertError").text("Unknown error while saving..");
  $("#alertError").show();
  } 
- $("#hidItemIDSave").val("");
+ $("#hidBnoSave").val("");
  $("#formBuyer")[0].reset();
 }
 
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event)
 {
-$("#hidItemIDSave").val($(this).data("bno")); 
+$("#hidBnoSave").val($(this).data("bno")); 
  $("#buyerID").val($(this).closest("tr").find('td:eq(0)').text());
- $("#name").val($(this).closest("tr").find('td:eq(3)').text());
- $("#address").val($(this).closest("tr").find('td:eq(1)').text());
- $("#phone").val($(this).closest("tr").find('td:eq(2)').text());
- $("#email").val($(this).closest("tr").find('td:eq(3)').text());
- $("#projectName").val($(this).closest("tr").find('td:eq(3)').text());
+ $("#name").val($(this).closest("tr").find('td:eq(1)').text());
+ $("#address").val($(this).closest("tr").find('td:eq(2)').text());
+ $("#phone").val($(this).closest("tr").find('td:eq(3)').text());
+ $("#email").val($(this).closest("tr").find('td:eq(4)').text());
+ $("#projectName").val($(this).closest("tr").find('td:eq(5)').text());
 
 });
 
@@ -90,7 +91,7 @@ $(document).on("click", ".btnRemove", function(event)
  dataType : "text",
  complete : function(response, status)
  {
- onItemDeleteComplete(response.responseText, status);
+ onBuyerDeleteComplete(response.responseText, status);
  }
  });
 });

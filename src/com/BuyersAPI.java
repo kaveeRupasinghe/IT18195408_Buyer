@@ -77,7 +77,7 @@ public class BuyersAPI extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request);
-		 String output = buyerObj.updateBuyers(paras.get("hidItemIDSave").toString(),
+		 String output = buyerObj.updateBuyers(paras.get("hidBnoSave").toString(),
 		 paras.get("buyerID").toString(),
 		 paras.get("name").toString(),
 		 paras.get("address").toString(),

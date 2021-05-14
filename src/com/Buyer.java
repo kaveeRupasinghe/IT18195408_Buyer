@@ -42,11 +42,11 @@ public String readBuyers()
 	 String buyerID = rs.getString("buyerID");
 	 String name = rs.getString("name");
 	 String address = rs.getString("address");
-	 String phone = Integer.toString(rs.getInt("phone"));		
+	 String phone = rs.getString("phone");		
 	 String email = rs.getString("email");
 	 String projectName = rs.getString("projectName");
 	// Add into the html table
-	 output += "<tr><td><input id='hidItemIDUpdate'name='hidItemIDUpdate'type='hidden' value='" + bno + "'>" + buyerID + "</td>";
+	 output += "<tr><td><input id='hidBnoUpdate'name='hidBnoUpdate'type='hidden' value='" + bno + "'>" + buyerID + "</td>";
 	 output += "<td>" + name + "</td>";
 	 output += "<td>" + address + "</td>";
 	 output += "<td>" + phone + "</td>";
@@ -67,7 +67,7 @@ public String readBuyers()
 	 return output;
 	 }
 
-public String insertBuyers(String buyerID, String name, String address, int phone, String email, String projectName)
+public String insertBuyers(String buyerID, String name, String address, String phone, String email, String projectName)
 	 {
 	 String output = "";
 	 try
@@ -86,7 +86,7 @@ public String insertBuyers(String buyerID, String name, String address, int phon
 	 preparedStmt.setString(2, buyerID);
 	 preparedStmt.setString(3, name);
 	 preparedStmt.setString(4, address);
-	 preparedStmt.setInt(5, phone);
+	 preparedStmt.setString(5, phone);
 	 preparedStmt.setString(6, email);
 	 preparedStmt.setString(7, projectName);
 
@@ -105,7 +105,7 @@ public String insertBuyers(String buyerID, String name, String address, int phon
 	 return output;
 	 } 
 
-public String updateBuyers(String bno, String buyerID,  String name, String address, int phone, String email, String projectName )
+public String updateBuyers(String bno, String buyerID,  String name, String address, String phone, String email, String projectName )
 
 		 {
 		 String output = "";
@@ -124,7 +124,7 @@ public String updateBuyers(String bno, String buyerID,  String name, String addr
 		 preparedStmt.setString(1, buyerID);
 		 preparedStmt.setString(2, name);
 		 preparedStmt.setString(3, address);			
-		 preparedStmt.setInt(4, phone);
+		 preparedStmt.setString(4, phone);
 		 preparedStmt.setString(5, email);
 		 preparedStmt.setString(6, projectName);
 		 preparedStmt.setInt(7, Integer.parseInt(bno));
