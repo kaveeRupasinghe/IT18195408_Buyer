@@ -1,11 +1,10 @@
--- phpMyAdmin SQL Dump
+-- mySQL Dump
 -- version 4.2.7.1
--- http://www.phpmyadmin.net
---
+
 -- Host: 127.0.0.1
 -- Generation Time: May 14, 2021 at 11:03 PM
 -- Server version: 5.6.20
--- PHP Version: 5.5.15
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +16,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `buyers`
+-- Database: `gadgetbadgetdb`
 --
 
 -- --------------------------------------------------------
